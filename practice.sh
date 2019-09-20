@@ -1,25 +1,8 @@
 #!/bin/bash
-# Author : Your Name
-# Date: Today's date
-# Script follows here:
-echo "Enter a number: "
-read numOne
-echo "Enter a second number: "
-read numTwo
-sum=$(($numOne + $numTwo))
-echo "The sum is : $sum"
-let prod=numOne*numTwo
-echo "The product is: $prod"
-echo "File Name: $0"
-echo "Command Line Argument 1: $1"
-grep $1 $2
-
-
-
-
-
-
-
-
-
-
+# Author: Kenny Schader
+echo "$(tput setaf 1)Hello my favorite TA Annika! Enter a file name: "
+read fileName
+grep -c '\d\d\d-\d\d\d-\d\d\d\d' $fileName
+grep -c '.*@.*\..*' $fileName # .* match any character any number of times, @ find the @ character, \. find the . character
+grep -c '303-\d\d\d-\d\d\d\d' $fileName
+grep '.+@geocities.com' $fileName >> email_results.txt
